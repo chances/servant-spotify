@@ -1,7 +1,10 @@
 name:                servant-spotify
 version:             0.1.0.0
-synopsis:            Initial project template from stack
-description:         Please see README.md
+synopsis:            Bindings to the Spotify Web API via servant-client
+description:         Provides a servant-client based client library for the
+                     <https://developer.spotify.com/web-api/ Spotify Web API (v1)>.
+                     .
+                     Please see README.md
 homepage:            https://github.com/chances/servant-spotify#readme
 license:             BSD3
 license-file:        LICENSE
