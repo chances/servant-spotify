@@ -11,7 +11,7 @@ license-file:        LICENSE
 author:              Chance Snow
 maintainer:          git@chancesnow.me
 copyright:           Copyright 2016 Chance Snow
-category:            App
+category:            Network, Web
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
