@@ -1,11 +1,9 @@
 module Network.Spotify.Api.Types.Scope where
 
-import           Data.Aeson       (FromJSON (parseJSON), ToJSON, toJSON,
-                                   withText)
-import           Data.Aeson.Types (Array, Parser)
-import           Data.Text        (Text, pack, unpack, words)
-import           Prelude          hiding (words)
-import           Servant          (ToHttpApiData (..), toQueryParam)
+import           Data.Aeson (FromJSON (parseJSON), ToJSON, toJSON, withText)
+import           Data.Text  (Text, pack, unpack, words)
+import           Prelude    hiding (words)
+import           Servant    (ToHttpApiData (..), toQueryParam)
 
 -- | If no scope is specified, access is permitted only to publicly available
 --   information: that is, only information normally visible to normal

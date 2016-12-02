@@ -9,8 +9,7 @@ module Network.Spotify.Api.Types
     ) where
 
 import           Data.Aeson                      hiding (encode)
-import           Data.Aeson.Types                (Options (omitNothingFields),
-                                                  Parser)
+import           Data.Aeson.Types                (Options (omitNothingFields))
 import           Data.ByteString.Base64          (encode)
 import qualified Data.ByteString.Char8           as C8
 import           Data.Text                       (Text, pack, unpack)
