@@ -168,11 +168,11 @@ instance ToHttpApiData Authorization where
     toQueryParam = pack . show
 
 data TokenResponse = TokenResponse
-    { accessToken     :: Text
-    , tokenType       :: Bearer
-    , scope           :: Scope
-    , expiresIn       :: Int
-    , newRefreshToken :: RefreshToken
+    { access_token  :: Text
+    , token_type    :: Bearer
+    , scope         :: Scope
+    , expires_in    :: Int
+    , refresh_token :: RefreshToken
     } deriving (Generic)
 
 instance FromJSON TokenResponse where
