@@ -8,12 +8,9 @@ module Network.Spotify.Api.Types
     , module Network.Spotify.Api.Types.Scope
     ) where
 
-import           Data.Aeson                      (FromJSON (parseJSON), ToJSON,
-                                                  defaultOptions,
-                                                  genericParseJSON,
-                                                  genericToJSON, toJSON,
-                                                  withText)
-import           Data.Aeson.Types                (Options (omitNothingFields))
+import           Data.Aeson                      hiding (encode)
+import           Data.Aeson.Types                (Options (omitNothingFields),
+                                                  Parser)
 import           Data.ByteString.Base64          (encode)
 import qualified Data.ByteString.Char8           as C8
 import           Data.Text                       (Text, pack, unpack)

@@ -1,10 +1,10 @@
 module Network.Spotify.Api.Types.Scope where
 
 import           Data.Aeson       (FromJSON (parseJSON), ToJSON, toJSON,
-                                   withArray)
+                                   withText)
 import           Data.Aeson.Types (Array, Parser)
-import           Data.Text        (Text, pack, unpack)
-import qualified Data.Vector      as V
+import           Data.Text        (Text, pack, unpack, words)
+import           Prelude          hiding (words)
 import           Servant          (ToHttpApiData (..), toQueryParam)
 
 -- | If no scope is specified, access is permitted only to publicly available
@@ -22,11 +22,9 @@ instance ToHttpApiData Scope where
     toQueryParam = pack . show
 
 instance FromJSON Scope where
-    parseJSON = withArray "Scope" $ \scopes -> do
-        parsedScopes <- parseScopes scopes
-        return Scope { getScopes = parsedScopes } where
-            parseScopes :: Array -> Parser [Text]
-            parseScopes = mapM parseJSON . V.toList
+    parseJSON = withText "Scope" $ \scopes -> do
+        let parsedScope = scopeFromList (words scopes)
+        return parsedScope
 
 instance ToJSON Scope where
     toJSON = toJSON . show
