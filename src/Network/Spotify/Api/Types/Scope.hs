@@ -32,56 +32,56 @@ instance ToJSON Scope where
 scopeFromList :: [Text] -> Scope
 scopeFromList scopes = Scope { getScopes = scopes }
 
--- Read access to user's private playlists.
+-- | Read access to user's private playlists.
 playlistReadPrivate :: String
 playlistReadPrivate = "playlist-read-private"
 
--- Include collaborative playlists when requesting a user's playlists.
+-- | Include collaborative playlists when requesting a user's playlists.
 playlistReadCollaborative :: String
 playlistReadCollaborative = "playlist-read-collaborative"
 
--- Write access to a user's public playlists.
+-- | Write access to a user's public playlists.
 playlistModifyPublic :: String
 playlistModifyPublic = "playlist-modify-public"
 
--- Write access to a user's private playlists.
+-- | Write access to a user's private playlists.
 playlistModifyPrivate :: String
 playlistModifyPrivate = "playlist-modify-private"
 
--- Control playback of a Spotify track. This scope is currently only available
--- to Spotify native SDKs (for example, the iOS SDK and the Android SDK). The
--- user must have a Spotify Premium account.
+-- | Control playback of a Spotify track. This scope is currently only available
+--   to Spotify native SDKs (for example, the iOS SDK and the Android SDK). The
+--   user must have a Spotify Premium account.
 streaming :: String
 streaming = "streaming"
 
--- Write/delete access to the list of artists and other users that the user follows.
+-- | Write/delete access to the list of artists and other users that the user follows.
 userFollowModify :: String
 userFollowModify = "user-follow-modify"
 
--- Read access to the list of artists and other users that the user follows.
+-- | Read access to the list of artists and other users that the user follows.
 userFollowRead :: String
 userFollowRead = "user-follow-read"
 
--- Read access to a user's 'Your Music' library.
+-- | Read access to a user's 'Your Music' library.
 userLibraryRead :: String
 userLibraryRead = "user-library-read"
 
--- Write/delete access to a user's 'Your Music' library.
+-- | Write/delete access to a user's 'Your Music' library.
 userLibraryModify :: String
 userLibraryModify = "user-library-modify"
 
--- Read access to user's subscription details (type of user account).
+-- | Read access to user's subscription details (type of user account).
 userReadPrivate :: String
 userReadPrivate = "user-read-private"
 
--- Read access to the user's birthdate.
+-- | Read access to the user's birthdate.
 userReadBirthdate :: String
 userReadBirthdate = "user-read-birthdate"
 
--- Read access to user's email address.
+-- | Read access to user's email address.
 userReadEmail :: String
 userReadEmail = "user-read-email"
 
--- Read access to a user's top artists and tracks
+-- | Read access to a user's top artists and tracks
 userTopRead :: String
 userTopRead = "user-top-read"
