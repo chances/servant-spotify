@@ -25,7 +25,6 @@ library
                      , Network.Spotify.Api.Types.Scope
   build-depends:       base >= 4.7 && < 5
                      , aeson
-                     , aeson-casing
                      , base64-bytestring
                      , bytestring
                      , http-client >= 0.5 && < 0.6

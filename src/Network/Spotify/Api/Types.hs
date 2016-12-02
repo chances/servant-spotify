@@ -13,7 +13,6 @@ import           Data.Aeson                      (FromJSON (parseJSON), ToJSON,
                                                   genericParseJSON,
                                                   genericToJSON, toJSON,
                                                   withText)
-import           Data.Aeson.Casing               (aesonPrefix, snakeCase)
 import           Data.Aeson.Types                (Options (omitNothingFields))
 import           Data.ByteString.Base64          (encode)
 import qualified Data.ByteString.Char8           as C8
@@ -177,14 +176,13 @@ data TokenResponse = TokenResponse
     } deriving (Generic)
 
 instance FromJSON TokenResponse where
-    parseJSON = genericParseJSON snakeCaseAndOmitNothingFields
+    parseJSON = genericParseJSON doOmitNothingFields
 
 instance ToJSON TokenResponse where
-    toJSON = genericToJSON snakeCaseAndOmitNothingFields
+    toJSON = genericToJSON doOmitNothingFields
 
-snakeCaseAndOmitNothingFields :: Options
-snakeCaseAndOmitNothingFields = options { omitNothingFields = True } where
-    options = aesonPrefix snakeCase
+doOmitNothingFields :: Options
+doOmitNothingFields = defaultOptions { omitNothingFields = True }
 
 data Bearer = Bearer
 
