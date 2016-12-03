@@ -31,55 +31,55 @@ scopeFromList :: [Text] -> Scope
 scopeFromList scopes = Scope { getScopes = scopes }
 
 -- | Read access to user's private playlists.
-playlistReadPrivate :: String
+playlistReadPrivate :: Text
 playlistReadPrivate = "playlist-read-private"
 
 -- | Include collaborative playlists when requesting a user's playlists.
-playlistReadCollaborative :: String
+playlistReadCollaborative :: Text
 playlistReadCollaborative = "playlist-read-collaborative"
 
 -- | Write access to a user's public playlists.
-playlistModifyPublic :: String
+playlistModifyPublic :: Text
 playlistModifyPublic = "playlist-modify-public"
 
 -- | Write access to a user's private playlists.
-playlistModifyPrivate :: String
+playlistModifyPrivate :: Text
 playlistModifyPrivate = "playlist-modify-private"
 
 -- | Control playback of a Spotify track. This scope is currently only available
 --   to Spotify native SDKs (for example, the iOS SDK and the Android SDK). The
 --   user must have a Spotify Premium account.
-streaming :: String
+streaming :: Text
 streaming = "streaming"
 
 -- | Write/delete access to the list of artists and other users that the user follows.
-userFollowModify :: String
+userFollowModify :: Text
 userFollowModify = "user-follow-modify"
 
 -- | Read access to the list of artists and other users that the user follows.
-userFollowRead :: String
+userFollowRead :: Text
 userFollowRead = "user-follow-read"
 
 -- | Read access to a user's 'Your Music' library.
-userLibraryRead :: String
+userLibraryRead :: Text
 userLibraryRead = "user-library-read"
 
 -- | Write/delete access to a user's 'Your Music' library.
-userLibraryModify :: String
+userLibraryModify :: Text
 userLibraryModify = "user-library-modify"
 
 -- | Read access to user's subscription details (type of user account).
-userReadPrivate :: String
+userReadPrivate :: Text
 userReadPrivate = "user-read-private"
 
 -- | Read access to the user's birthdate.
-userReadBirthdate :: String
+userReadBirthdate :: Text
 userReadBirthdate = "user-read-birthdate"
 
 -- | Read access to user's email address.
-userReadEmail :: String
+userReadEmail :: Text
 userReadEmail = "user-read-email"
 
 -- | Read access to a user's top artists and tracks
-userTopRead :: String
+userTopRead :: Text
 userTopRead = "user-top-read"
