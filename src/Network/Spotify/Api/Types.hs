@@ -3,13 +3,13 @@
 {-# LANGUAGE OverloadedStrings    #-}
 {-# LANGUAGE TypeSynonymInstances #-}
 
+-- TODO: Make this list explicit?
 module Network.Spotify.Api.Types
     ( module Network.Spotify.Api.Types
     , module Network.Spotify.Api.Types.Scope
     ) where
 
 import           Data.Aeson                      hiding (encode)
-import           Data.Aeson.Types                (Options (omitNothingFields))
 import           Data.ByteString.Base64          (encode)
 import qualified Data.ByteString.Char8           as C8
 import           Data.Text                       (Text, pack, unpack)
@@ -22,6 +22,7 @@ import           Test.RandomStrings              (onlyAlphaNum, randomASCII,
                                                   randomString)
 
 import           Network.Spotify.Api.Types.Scope
+import           Network.Spotify.Internal.Utils
 
 data ResponseType = ResponseType
 
@@ -176,9 +177,6 @@ instance FromJSON TokenResponse where
 
 instance ToJSON TokenResponse where
     toJSON = genericToJSON doOmitNothingFields
-
-doOmitNothingFields :: Options
-doOmitNothingFields = defaultOptions { omitNothingFields = True }
 
 data Bearer = Bearer
 
