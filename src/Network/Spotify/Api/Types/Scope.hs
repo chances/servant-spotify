@@ -1,3 +1,8 @@
+{-# LANGUAGE OverloadedStrings #-}
+
+-- | Scopes let you specify exactly what types of data your application wants
+--   to access, and the set of scopes you pass in your call determines what
+--   access permissions the user is asked to grant.
 module Network.Spotify.Api.Types.Scope where
 
 import           Data.Aeson (FromJSON (parseJSON), ToJSON, toJSON, withText)
@@ -27,8 +32,11 @@ instance FromJSON Scope where
 instance ToJSON Scope where
     toJSON = toJSON . show
 
+-- | Create a 'Scope' from a textual list of scopes
 scopeFromList :: [Text] -> Scope
 scopeFromList scopes = Scope { getScopes = scopes }
+
+-- * Available Spotify Web API Scopes
 
 -- | Read access to user's private playlists.
 playlistReadPrivate :: Text
