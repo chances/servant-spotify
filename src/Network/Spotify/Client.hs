@@ -1,25 +1,19 @@
 module Network.Spotify.Client
     ( AuthorizeApi
+    , MeApi
     , TokenApi
     , authorizeApi
     , authorizeLink
-    , tokenApi
-    , tokenRequest
+    , meApi
+    , meRequest
     , spotifyAccountsBaseUrl
     , spotifyApiBaseUrl
+    , tokenApi
+    , tokenRequest
     ) where
 
-import           Servant.Client           (BaseUrl (..), Scheme (Https))
-
 import           Network.Spotify.Api.Auth
+import           Network.Spotify.Api.User
+import           Network.Spotify.Internal.Utils (spotifyApiBaseUrl)
 
 -- TODO: Document all public values in this client library
--- IDEA: Refactor this client library into it's own library for the masses
-
-spotifyApiBaseUrl :: BaseUrl
-spotifyApiBaseUrl = BaseUrl
-    { baseUrlScheme = Https
-    , baseUrlHost = "api.spotify.com"
-    , baseUrlPort = 443
-    , baseUrlPath = "v1"
-    }

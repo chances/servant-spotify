@@ -21,7 +21,12 @@ import           Servant                              (FromHttpApiData (..),
 import           Test.RandomStrings                   (onlyAlphaNum,
                                                        randomASCII,
                                                        randomString)
+
+import           Network.Spotify.Api.Types.Followers  as Types
+import           Network.Spotify.Api.Types.Image      as Types
 import           Network.Spotify.Api.Types.Scope      as Types
+import           Network.Spotify.Api.Types.SpotifyUri as Types
+import           Network.Spotify.Api.Types.SpotifyUrl as Types
 import           Network.Spotify.Internal.Utils
 
 data ResponseType = ResponseType

@@ -1,5 +1,5 @@
 name:                servant-spotify
-version:             0.1.0.0
+version:             0.1.1.0
 synopsis:            Bindings to the Spotify Web API via servant-client
 description:         Provides a servant-client based client library for the
                      <https://developer.spotify.com/web-api/ Spotify Web API (v1)>.
@@ -22,18 +22,27 @@ library
                      , Network.Spotify.Client
                      , Network.Spotify.Api.Auth
                      , Network.Spotify.Api.Types
+                     , Network.Spotify.Api.Types.Followers
+                     , Network.Spotify.Api.Types.Image
                      , Network.Spotify.Api.Types.Scope
+                     , Network.Spotify.Api.Types.SpotifyUri
+                     , Network.Spotify.Api.Types.SpotifyUrl
+                     , Network.Spotify.Api.Types.User
+                     , Network.Spotify.Api.User
+  other-modules:       Network.Spotify.Internal.Utils
   build-depends:       base >= 4.7 && < 5
                      , aeson
                      , base64-bytestring
                      , bytestring
                      , http-client >= 0.5 && < 0.6
+                     , iso3166-country-codes
                      , random-strings
                      , servant
                      , servant-client
                      , servant-server
+                     , split
                      , text
-                     , vector
+                     , unordered-containers
   ghc-options:         -Wall -fno-warn-orphans -Werror
   default-language:    Haskell2010
 
