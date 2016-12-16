@@ -6,22 +6,22 @@
 -- TODO: Make this list explicit?
 module Network.Spotify.Api.Types
     ( module Network.Spotify.Api.Types
-    , module Network.Spotify.Api.Types.Scope
+    , module Types
     ) where
 
-import           Data.Aeson                      hiding (encode)
-import           Data.ByteString.Base64          (encode)
-import qualified Data.ByteString.Char8           as C8
-import           Data.Text                       (Text, pack, unpack)
-import           GHC.Generics                    (Generic)
-import           Servant                         (FromHttpApiData (..),
-                                                  ToFormUrlEncoded (..),
-                                                  ToHttpApiData (..),
-                                                  toQueryParam)
-import           Test.RandomStrings              (onlyAlphaNum, randomASCII,
-                                                  randomString)
-
-import           Network.Spotify.Api.Types.Scope
+import           Data.Aeson                           hiding (encode)
+import           Data.ByteString.Base64               (encode)
+import qualified Data.ByteString.Char8                as C8
+import           Data.Text                            (Text, pack, unpack)
+import           GHC.Generics                         (Generic)
+import           Servant                              (FromHttpApiData (..),
+                                                       ToFormUrlEncoded (..),
+                                                       ToHttpApiData (..),
+                                                       toQueryParam)
+import           Test.RandomStrings                   (onlyAlphaNum,
+                                                       randomASCII,
+                                                       randomString)
+import           Network.Spotify.Api.Types.Scope      as Types
 import           Network.Spotify.Internal.Utils
 
 data ResponseType = ResponseType
