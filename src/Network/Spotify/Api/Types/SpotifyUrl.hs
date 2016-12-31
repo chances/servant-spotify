@@ -1,5 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.SpotifyUrl
+Description : An external URL for some Spotify Data.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.SpotifyUrl where
 
 import           Data.Aeson          (FromJSON (parseJSON), ToJSON, object,

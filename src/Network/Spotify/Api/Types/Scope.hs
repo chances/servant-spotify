@@ -1,8 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 
--- | Scopes let you specify exactly what types of data your application wants
---   to access, and the set of scopes you pass in your call determines what
---   access permissions the user is asked to grant.
+{-|
+Module      : Network.Spotify.Api.Types.Scope
+Description : OAuth scopes for the Spotify Web API
+Stability   : experimental
+
+Scopes let you specify exactly what types of data your application wants to
+access, and the set of scopes you pass in your call determines what access
+permissions the user is asked to grant.
+-}
 module Network.Spotify.Api.Types.Scope where
 
 import           Data.Aeson (FromJSON (parseJSON), ToJSON, toJSON, withText)

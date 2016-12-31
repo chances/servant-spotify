@@ -1,6 +1,11 @@
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.Paging
+Description : Spotify Paging object for pages of data.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.Paging where
 
 import           Data.Aeson   (FromJSON (parseJSON), ToJSON, defaultOptions,

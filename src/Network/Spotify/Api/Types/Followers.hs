@@ -1,6 +1,11 @@
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.Followers
+Description : Information about the followers of a user.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.Followers where
 
 import           Data.Aeson   (FromJSON, ToJSON)

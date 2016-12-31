@@ -3,6 +3,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeOperators     #-}
 
+{-|
+Module      : Network.Spotify.Api.User
+Description : Spotify Web API user related endpoints.
+Stability   : experimental
+-}
 module Network.Spotify.Api.User
     ( MeApi
     , meApi

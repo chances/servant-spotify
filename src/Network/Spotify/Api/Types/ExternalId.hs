@@ -1,5 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.ExternalId
+Description : External ID for some Spotify Data.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.ExternalId where
 
 import           Data.Aeson          (FromJSON (parseJSON), ToJSON, object,

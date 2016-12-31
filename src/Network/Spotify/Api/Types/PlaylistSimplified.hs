@@ -2,6 +2,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE RecordWildCards   #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.PlaylistSimplified
+Description : Information about a simplified representation of a playlist.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.PlaylistSimplified where
 
 import           Data.Aeson                           (FromJSON (parseJSON),

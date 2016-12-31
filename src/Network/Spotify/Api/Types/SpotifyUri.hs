@@ -1,5 +1,10 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.SpotifyUri
+Description : Spotify resource identifier for some Spotify Data.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.SpotifyUri where
 
 import           Data.Aeson                           (FromJSON (parseJSON),

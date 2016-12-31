@@ -1,6 +1,11 @@
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.AlbumSimplified
+Description : Information about a simplified representation of an album.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.AlbumSimplified where
 
 import           Data.Aeson                                 (FromJSON (parseJSON),

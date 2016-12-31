@@ -1,6 +1,11 @@
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.Image
+Description : Information about an image beloging to some Spotify Content.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.Image where
 
 import           Data.Aeson                     (FromJSON (parseJSON), ToJSON,

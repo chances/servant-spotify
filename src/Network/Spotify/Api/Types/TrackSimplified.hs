@@ -1,6 +1,11 @@
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.TrackSimplified
+Description : Information about a simplified representation of a track.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.TrackSimplified where
 
 import           Data.Aeson                                 (FromJSON (parseJSON),

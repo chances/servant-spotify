@@ -1,6 +1,11 @@
 {-# LANGUAGE DeriveGeneric     #-}
 {-# LANGUAGE OverloadedStrings #-}
 
+{-|
+Module      : Network.Spotify.Api.Types.Artist
+Description : Information about an artist.
+Stability   : experimental
+-}
 module Network.Spotify.Api.Types.Artist where
 
 import           Data.Aeson                           (FromJSON (parseJSON),

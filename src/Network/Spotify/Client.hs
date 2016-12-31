@@ -1,3 +1,8 @@
+{-|
+Module      : Network.Spotify.Clinet
+Description : Spotify Web API client library.
+Stability   : experimental
+-}
 module Network.Spotify.Client
     ( AuthorizeApi
     , MeApi

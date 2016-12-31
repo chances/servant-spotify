@@ -3,6 +3,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeOperators     #-}
 
+{-|
+Module      : Network.Spotify.Api.Auth
+Description : Spotify Authorization API
+Stability   : experimental
+-}
 module Network.Spotify.Api.Auth
     ( AuthorizeApi
     , TokenApi
