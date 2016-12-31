@@ -39,11 +39,10 @@ data Album = Album
                                               --   album is available: ISO
                                               --   3166-1 alpha-2 country codes.
                                               --   .
-                                              --   Note that an album is
-                                              --   considered available in a
-                                              --   market when at least 1 of
-                                              --   its tracks is available in
-                                              --   that market.
+                                              --   Note: An album is considered
+                                              --   available in a market when
+                                              --   at least 1 of its tracks is
+                                              --   available in that market.
     , copyrights             :: [Copyright] -- ^ The copyright statements of
                                             --   the album.
     , external_ids           :: ExternalId -- ^ Known external IDs for the

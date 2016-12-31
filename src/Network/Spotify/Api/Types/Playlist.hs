@@ -70,7 +70,7 @@ data PlaylistTrack = PlaylistTrack
                              --   _Note that some very old playlists may return
                              --   'Nothing' in this field._
     , added_by :: Maybe User -- ^ The Spotify user who added the track.
-                             --   Note that some very old playlists may return
+                             --   Note: Some very old playlists may return
                              --   'Nothing' in this field.
     , is_local :: Bool -- ^ Whether this track is a local file or not.
     , track    :: Track -- ^ Information about the track.
