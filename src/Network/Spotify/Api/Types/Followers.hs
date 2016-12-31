@@ -16,7 +16,7 @@ import           GHC.Generics (Generic)
 data Followers = Followers
     { href  :: Maybe Text -- ^ A link to the Web API endpoint providing full
                           --   details of the followers; null if not available.
-                          --   .
+                          --   
                           --   Please note that this will always be set to null,
                           --   as the Web API does not support it at the moment.
     , total :: Int -- ^ The total number of followers.

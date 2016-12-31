@@ -34,7 +34,7 @@ data AlbumSimplified = AlbumSimplified
     , available_markets :: [CountryCode] -- ^ The markets in which the album is
                                          --   available: ISO 3166-1 alpha-2
                                          --   country codes.
-                                         --   .
+                                         --   
                                          --   Note: An album is considered
                                          --   available in a market when at
                                          --   least 1 of its tracks is

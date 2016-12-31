@@ -71,11 +71,11 @@ data Track = Track
     , popularity        :: Int -- ^ The popularity of the track. The value will
                                --   be between 0 and 100, with 100 being the
                                --   most popular.
-                               --   .
+                               --   
                                --   The popularity is based, in most part, on
                                --   the total number of plays the track has had
                                --   and how recent those plays are.
-                               --   .
+                               --   
                                --   See [Track Object (Full)](https://developer.spotify.com/web-api/object-model/#track-object-full)
                                --   in the Spotify Web API docs for more
                                --   detailed info.

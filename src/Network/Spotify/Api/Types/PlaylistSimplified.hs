@@ -35,7 +35,7 @@ data PlaylistSimplified = PlaylistSimplified
                                --   empty or contain up to three images. The
                                --   images are returned by size in descending
                                --   order. See Working with Playlists.
-                               --   .
+                               --   
                                --   _Note: If returned, the source URL for the
                                --   image is temporary and will expire in less
                                --   than a day._

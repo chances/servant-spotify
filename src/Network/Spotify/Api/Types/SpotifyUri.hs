@@ -17,7 +17,7 @@ import           Network.Spotify.Api.Types.SpotifyUrl (SpotifyUrl (..),
 
 -- | The resource identifier that you can enter, for example, in the Spotify
 --   Desktop client's search box to locate an artist, album, or track.
---   .
+--
 --   e.g. `spotify:track:6rqhFgbbKwnb9MLmUQDhG6`
 data SpotifyUri a = SpotifyUri
     { spotifyId    :: Text -- ^ The Spotify URI resource ID of the resource
