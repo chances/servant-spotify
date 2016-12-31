@@ -63,7 +63,7 @@ data User = User
     } deriving (Generic)
 
 instance FromJSON User where
-    parseJSON = withObject "record" $ \o -> User
+    parseJSON = withObject "User" $ \o -> User
         <$> o .:? "birthdate"
         <*> o .:? "country"
         <*> o .: "display_name"
