@@ -16,7 +16,7 @@ import           GHC.Generics                   (Generic)
 
 import           Network.Spotify.Internal.Utils
 
--- | Information about the followers of the user.
+-- | Information about an image beloging to some Spotify Content.
 data Image = Image
     { url    :: Text -- ^ The source URL of the image.
     , width  :: Maybe Int -- ^ The image width in pixels. If unknown: null or

@@ -2,7 +2,7 @@
 
 {-|
 Module      : Network.Spotify.Api.Types.SpotifyUrl
-Description : An external URL for some Spotify Data.
+Description : An external URL for some Spotify Content.
 Stability   : experimental
 -}
 module Network.Spotify.Api.Types.SpotifyUrl where
@@ -13,7 +13,7 @@ import           Data.Aeson.Types    (Parser)
 import qualified Data.HashMap.Strict as HM
 import           Data.Text           (Text, pack, unpack)
 
--- | An external URL for some object.
+-- | An external URL for some Spotify Content.
 data SpotifyUrl = SpotifyUrl
     { urlType  :: SpotifyUrlType -- ^ The type of the URL.
     , urlValue :: Text -- ^ An external, public URL for the object.

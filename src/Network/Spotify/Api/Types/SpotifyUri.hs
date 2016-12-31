@@ -2,7 +2,7 @@
 
 {-|
 Module      : Network.Spotify.Api.Types.SpotifyUri
-Description : Spotify resource identifier for some Spotify Data.
+Description : Spotify resource identifier for some Spotify Content.
 Stability   : experimental
 -}
 module Network.Spotify.Api.Types.SpotifyUri where

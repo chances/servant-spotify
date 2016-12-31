@@ -2,7 +2,7 @@
 
 {-|
 Module      : Network.Spotify.Api.Types.ExternalId
-Description : External ID for some Spotify Data.
+Description : External ID for some Spotify Content.
 Stability   : experimental
 -}
 module Network.Spotify.Api.Types.ExternalId where
@@ -13,12 +13,12 @@ import           Data.Aeson.Types    (Pair, Parser, Value)
 import qualified Data.HashMap.Strict as HM
 import           Data.Text           (Text, pack, unpack)
 
--- | An external ID for some object.
+-- | An external ID for some Spotify Content.
 data ExternalId = ExternalId
     { externalIds :: [ExternalIdEntry] -- ^ List of external identifiers
     }
 
--- | A single external identifier for some object.
+-- | A single external identifier for some Spotify Content.
 data ExternalIdEntry = ExternalIdEntry
     { idType  :: ExternalIdType -- ^ The identifier type
     , idValue :: Text -- ^ An external identifier for the object.
