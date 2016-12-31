@@ -44,4 +44,4 @@ parseSpotifyUri typeAndId =
                 sId = head $ tail typeAndId
 
 instance ToJSON (SpotifyUri a) where
-    toJSON p = toJSON $ pack ("spotify:" ++ unpack (resourceType p) ++ unpack (spotifyId p))
+    toJSON p = toJSON $ pack ("spotify:" ++ unpack (resourceType p) ++ ":" ++ unpack (spotifyId p))
