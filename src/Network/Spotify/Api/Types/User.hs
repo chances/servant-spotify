@@ -22,9 +22,9 @@ import           Network.Spotify.Api.Types.SpotifyUri (SpotifyUri)
 import           Network.Spotify.Api.Types.SpotifyUrl (SpotifyUrl)
 import           Network.Spotify.Internal.Utils
 
--- | A Spotify user.
+-- | Information about a user.
 --   .
---   @note Certain values are Nothing depending on the scope granted to the
+--   Note: Certain values are 'Nothing' depending on the scope granted to the
 --   request the retreives the 'User'.
 data User = User
     { birthdate     :: Maybe Text -- ^ The user's date-of-birth.

@@ -12,7 +12,7 @@ import           Data.Aeson   (FromJSON, ToJSON)
 import           Data.Text    (Text)
 import           GHC.Generics (Generic)
 
--- | Information about the followers of the user.
+-- | Information about the followers of a user.
 data Followers = Followers
     { href  :: Maybe Text -- ^ A link to the Web API endpoint providing full
                           --   details of the followers; null if not available.
