@@ -59,6 +59,9 @@ matrix:
     os: linux
 
   allow_failures:
+  - env: BUILD=cabal GHCVER=7.10.3 CABALVER=1.22 # Until I can figure out that
+                                                 # weird Data.Aeson issue
+  # https://travis-ci.org/chances/servant-spotify/jobs/187969616#L357
   - env: BUILD=cabal GHCVER=8.0.1 CABALVER=1.24
   - env: BUILD=cabal GHCVER=head  CABALVER=head
   - env: BUILD=stack ARGS="--resolver lts-6.3"
