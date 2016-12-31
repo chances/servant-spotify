@@ -20,18 +20,18 @@ import           Network.Spotify.Api.Types.User       (User)
 
 -- | Information about a playlist.
 data Playlist = Playlist
-    { collaborative :: Bool -- | 'True' if the owner allows other users to
+    { collaborative :: Bool -- ^ 'True' if the owner allows other users to
                             --   modify the playlist. 'False' otherwise.
-    , description   :: Maybe Text -- | The playlist description. _Only returned
+    , description   :: Maybe Text -- ^ The playlist description. _Only returned
                                   --   for modified, verified playlists,
                                   --   otherwise 'Nothing'._
-    , external_urls :: SpotifyUrl -- | Known external URLs for this playlist.
-    , followers     :: Followers -- | Information about the followers of the
+    , external_urls :: SpotifyUrl -- ^ Known external URLs for this playlist.
+    , followers     :: Followers -- ^ Information about the followers of the
                                  --   playlist.
-    , href          :: Text -- | A link to the Web API endpoint providing full
+    , href          :: Text -- ^ A link to the Web API endpoint providing full
                             --   details of the playlist.
-    , id            :: Text -- | The Spotify ID for the playlist.
-    , images        :: [Image] -- | Images for the playlist. The array may be
+    , id            :: Text -- ^ The Spotify ID for the playlist.
+    , images        :: [Image] -- ^ Images for the playlist. The array may be
                                --   empty or contain up to three images. The
                                --   images are returned by size in descending
                                --   order. See Working with Playlists.
@@ -39,18 +39,18 @@ data Playlist = Playlist
                                --   _Note: If returned, the source URL for the
                                --   image is temporary and will expire in less
                                --   than a day._
-    , name          :: Text -- | The name of the playlist.
-    , owner         :: User -- | The user who owns the playlist.
-    , public        :: Maybe Bool -- | The playlist's public/private status:
+    , name          :: Text -- ^ The name of the playlist.
+    , owner         :: User -- ^ The user who owns the playlist.
+    , public        :: Maybe Bool -- ^ The playlist's public/private status:
                                   --   `True` the playlist is public, 'False'
                                   --   the playlist is private, 'Nothing' the
                                   --   playlist status is not relevant.
-    , snapshot_id   :: Text -- | The version identifier for the current
+    , snapshot_id   :: Text -- ^ The version identifier for the current
                             --   playlist. Can be supplied in other requests
                             --   to target a specific playlist version.
-    , tracks        :: Paging [PlaylistTrack] -- | Information about the tracks
+    , tracks        :: Paging [PlaylistTrack] -- ^ Information about the tracks
                                               --   of the playlist.
-    , uri           :: SpotifyUri Playlist -- | The 'SpotifyUri' for
+    , uri           :: SpotifyUri Playlist -- ^ The 'SpotifyUri' for
                                                --   the playlist.
     } deriving (Generic)
 
@@ -61,14 +61,14 @@ instance ToJSON Playlist where
 
 -- | A collection containing track information for a 'PlaylistSimplified'.
 data PlaylistTrack = PlaylistTrack
-    { added_at :: Maybe Text -- | The date and time the track was added.
+    { added_at :: Maybe Text -- ^ The date and time the track was added.
                              --   _Note that some very old playlists may return
                              --   'Nothing' in this field._
-    , added_by :: Maybe User -- | The Spotify user who added the track.
+    , added_by :: Maybe User -- ^ The Spotify user who added the track.
                              --   Note that some very old playlists may return
                              --   'Nothing' in this field.
-    , is_local :: Bool -- | Whether this track is a local file or not.
-    , track    :: Track -- | Information about the track.
+    , is_local :: Bool -- ^ Whether this track is a local file or not.
+    , track    :: Track -- ^ Information about the track.
     } deriving (Generic)
 
 instance FromJSON PlaylistTrack where

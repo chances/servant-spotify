@@ -10,13 +10,13 @@ import           Data.Text           (Text, pack, unpack)
 
 -- | An external ID for some object.
 data ExternalId = ExternalId
-    { externalIds :: [ExternalIdEntry] -- | List of external identifiers
+    { externalIds :: [ExternalIdEntry] -- ^ List of external identifiers
     }
 
 -- | A single external identifier for some object.
 data ExternalIdEntry = ExternalIdEntry
-    { idType  :: ExternalIdType -- | The identifier type
-    , idValue :: Text -- | An external identifier for the object.
+    { idType  :: ExternalIdType -- ^ The identifier type
+    , idValue :: Text -- ^ An external identifier for the object.
     }
 
 instance FromJSON ExternalId where
@@ -56,10 +56,10 @@ colateExternalIds entries =
 
 -- | The type of an external ID for some object.
 data ExternalIdType =
-      ISRC -- | International Standard Recording Code
-    | EAN -- | International Article Number
-    | UPC -- | Universal Product Code
-    | Other Text -- | Some other exteranl ID for the object.
+      ISRC -- ^ International Standard Recording Code
+    | EAN -- ^ International Article Number
+    | UPC -- ^ Universal Product Code
+    | Other Text -- ^ Some other exteranl ID for the object.
 
 instance Show ExternalIdType where
     show externalIdType = case externalIdType of

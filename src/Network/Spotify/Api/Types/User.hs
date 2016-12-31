@@ -22,11 +22,11 @@ import           Network.Spotify.Internal.Utils
 --   @note Certain values are Nothing depending on the scope granted to the
 --   request the retreives the 'User'.
 data User = User
-    { birthdate     :: Maybe Text -- | The user's date-of-birth.
+    { birthdate     :: Maybe Text -- ^ The user's date-of-birth.
                                   --   .
                                   --   Only available when granted the
                                   --   'userReadBirthdate' 'Scope'.
-    , country       :: Maybe CountryCode -- | The country of the user, as set
+    , country       :: Maybe CountryCode -- ^ The country of the user, as set
                                          --   in the user's account profile.
                                          --   .
                                          --   An ISO 3166-1 alpha-2 country
@@ -34,10 +34,10 @@ data User = User
                                          --   .
                                          --   Only available when granted the
                                          --   'userReadPrivate' 'Scope'.
-    , display_name  :: Maybe Text -- | The name displayed on the user's profile.
+    , display_name  :: Maybe Text -- ^ The name displayed on the user's profile.
                                   --   .
                                   --   'Nothing' if not available.
-    , email         :: Maybe Text -- | The user's email address, as entered by
+    , email         :: Maybe Text -- ^ The user's email address, as entered by
                                   --   the user when creating their account.
                                   --   .
                                   --   Important! This email address is
@@ -45,21 +45,21 @@ data User = User
                                   --   .
                                   --   Only available when granted the
                                   --   'userReadPrivate' 'Scope'.
-    , external_urls :: SpotifyUrl -- | Known external URLs for this user.
-    , followers     :: Followers -- | Information about the followers of the
+    , external_urls :: SpotifyUrl -- ^ Known external URLs for this user.
+    , followers     :: Followers -- ^ Information about the followers of the
                                  --   user.
     -- IDEA: Generalize href for reuse across library to get other resources
-    , href          :: Text -- | A link to the Web API endpoint for this user.
-    , id            :: Text -- | The Spotify user ID for the user.
-    , images        :: [Image] -- | The user's profile image.
-    , product       :: Maybe Text -- | The user's Spotify subscription level:
+    , href          :: Text -- ^ A link to the Web API endpoint for this user.
+    , id            :: Text -- ^ The Spotify user ID for the user.
+    , images        :: [Image] -- ^ The user's profile image.
+    , product       :: Maybe Text -- ^ The user's Spotify subscription level:
                                   --   "premium", "free", etc. (The subscription
                                   --   level "open" can be considered the same
                                   --   as "free".)
                                   --   .
                                   --   Only available when granted the
                                   --   'userReadPrivate' 'Scope'.
-    , uri           :: SpotifyUri User -- | The 'SpotifyUri' for the user.
+    , uri           :: SpotifyUri User -- ^ The 'SpotifyUri' for the user.
     } deriving (Generic)
 
 instance FromJSON User where

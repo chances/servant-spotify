@@ -21,8 +21,8 @@ import           Network.Spotify.Internal.Utils
 
 -- | Information about an album.
 data Album = Album
-    { album_type             :: AlbumType -- | The type of the album.
-    , artists                :: [ArtistSimplified] -- | The artists of the
+    { album_type             :: AlbumType -- ^ The type of the album.
+    , artists                :: [ArtistSimplified] -- ^ The artists of the
                                                    --   album.
                                                    --   .
                                                    --   Each artist object
@@ -30,7 +30,7 @@ data Album = Album
                                                    --   to more detailed
                                                    --   information about the
                                                    --   artist.
-    , available_markets      :: [CountryCode] -- | The markets in which the
+    , available_markets      :: [CountryCode] -- ^ The markets in which the
                                               --   album is available: ISO
                                               --   3166-1 alpha-2 country codes.
                                               --   .
@@ -39,40 +39,40 @@ data Album = Album
                                               --   market when at least 1 of
                                               --   its tracks is available in
                                               --   that market.
-    , copyrights             :: [Copyright] -- | The copyright statements of
+    , copyrights             :: [Copyright] -- ^ The copyright statements of
                                             --   the album.
-    , external_ids           :: ExternalId -- | Known external IDs for the
+    , external_ids           :: ExternalId -- ^ Known external IDs for the
                                            --   album.
-    , external_urls          :: SpotifyUrl -- | Known external URLs for this
+    , external_urls          :: SpotifyUrl -- ^ Known external URLs for this
                                            --   album.
-    , genres                 :: [Text] -- | A list of the genres used to
+    , genres                 :: [Text] -- ^ A list of the genres used to
                                        --   classify the album. For example:
                                        --   "Prog Rock", "Post-Grunge". (If not
                                        --   yet classified, the array is empty.)
-    , href                   :: Text -- | A link to the Web API endpoint
+    , href                   :: Text -- ^ A link to the Web API endpoint
                                      --   providing full details of the album.
-    , id                     :: Text -- | The Spotify ID for the album.
-    , images                 :: [Image] -- | The cover art for the album in
+    , id                     :: Text -- ^ The Spotify ID for the album.
+    , images                 :: [Image] -- ^ The cover art for the album in
                                         --   various sizes, widest first.
-    , label                  :: Text -- | The label for the album.
-    , name                   :: Text -- | The name of the album. In case of an
+    , label                  :: Text -- ^ The label for the album.
+    , name                   :: Text -- ^ The name of the album. In case of an
                                      --   album takedown, the value may be an
                                      --   empty string.
-    , popularity             :: Int -- | The popularity of the album. The value
+    , popularity             :: Int -- ^ The popularity of the album. The value
                                     --   will be between 0 and 100, with 100
                                     --   being the most popular. The popularity
                                     --   is calculated from the popularity of
                                     --   the album's individual tracks.
-    , release_date           :: Text -- | The date the album was first released,
+    , release_date           :: Text -- ^ The date the album was first released,
                                      --   for example "1981-12-15". Depending
                                      --   on the precision, it might be shown
                                      --   as "1981" or "1981-12".
-    , release_date_precision :: ReleaseDatePrecision -- | The precision with
+    , release_date_precision :: ReleaseDatePrecision -- ^ The precision with
                                                      --   which the release
                                                      --   date is known.
-    , tracks                 :: Paging [TrackSimplified] -- | The tracks of the
+    , tracks                 :: Paging [TrackSimplified] -- ^ The tracks of the
                                                          --   album.
-    , uri                    :: SpotifyUri Album -- | The 'SpotifyUri' for the
+    , uri                    :: SpotifyUri Album -- ^ The 'SpotifyUri' for the
                                                  --   album.
     } deriving (Generic)
 
@@ -93,8 +93,8 @@ instance A.ToJSON AlbumType where
     toJSON = A.genericToJSON A.defaultOptions
 
 data Copyright = Copyright
-    { text  :: Text -- | The copyright text for an album.
-    , type_ :: Text -- | The type of copyright: C = the copyright, P = the
+    { text  :: Text -- ^ The copyright text for an album.
+    , type_ :: Text -- ^ The type of copyright: C = the copyright, P = the
                     --   sound recording (performance) copyright.
     }
 

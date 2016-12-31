@@ -15,9 +15,9 @@ import           Network.Spotify.Api.Types.SpotifyUrl (SpotifyUrl (..),
 --   .
 --   e.g. `spotify:track:6rqhFgbbKwnb9MLmUQDhG6`
 data SpotifyUri a = SpotifyUri
-    { spotifyId    :: Text -- | The Spotify URI resource ID of the resource
+    { spotifyId    :: Text -- ^ The Spotify URI resource ID of the resource
                            --   pointed to by this Spotify URI
-    , resourceType :: Text -- | The textual type of the resourse this URI
+    , resourceType :: Text -- ^ The textual type of the resourse this URI
                            --   identifies
     , getApiLink   :: SpotifyUrl
     }

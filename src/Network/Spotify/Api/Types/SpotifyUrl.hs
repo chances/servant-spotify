@@ -10,8 +10,8 @@ import           Data.Text           (Text, pack, unpack)
 
 -- | An external URL for some object.
 data SpotifyUrl = SpotifyUrl
-    { urlType  :: SpotifyUrlType -- | The type of the URL.
-    , urlValue :: Text -- | An external, public URL for the object.
+    { urlType  :: SpotifyUrlType -- ^ The type of the URL.
+    , urlValue :: Text -- ^ An external, public URL for the object.
     }
 
 instance FromJSON SpotifyUrl where
@@ -41,8 +41,8 @@ instance ToJSON SpotifyUrl where
 
 -- | The type of an external URL for some object.
 data SpotifyUrlType =
-      Spotify -- | The Spotify URL for the object.
-    | Other -- | Some other URL for the object.
+      Spotify -- ^ The Spotify URL for the object.
+    | Other -- ^ Some other URL for the object.
 
 instance Show SpotifyUrlType where
     show spotifyUrlType = case spotifyUrlType of

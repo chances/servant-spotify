@@ -20,30 +20,30 @@ import           Network.Spotify.Api.Types.Track            (LinkedTrack (..))
 
 -- | Simplified information about a track.
 data TrackSimplified = TrackSimplified
-    { artists           :: [ArtistSimplified] -- | The artists who performed
+    { artists           :: [ArtistSimplified] -- ^ The artists who performed
                                               --   the track. Each artist
                                               --   object includes a link in
                                               --   href to more detailed
                                               --   information about the artist.
-    , available_markets :: [CountryCode] -- | A list of the countries in which
+    , available_markets :: [CountryCode] -- ^ A list of the countries in which
                                          --   the track can be played,
                                          --   identified by their ISO 3166-1
                                          --   alpha-2 code. (A 'CountryCode')
-    , disc_number       :: Int -- | The disc number (usually `1` unless the
+    , disc_number       :: Int -- ^ The disc number (usually `1` unless the
                                --   album consists of more than one disc).
-    , duration_ms       :: Int -- | The track length in milliseconds.
-    , explicit          :: Bool -- | Whether or not the track has explicit
+    , duration_ms       :: Int -- ^ The track length in milliseconds.
+    , explicit          :: Bool -- ^ Whether or not the track has explicit
                                 --   lyrics ('True' = yes it does; 'False' = no
                                 --   it does not OR unknown).
-    , external_urls     :: SpotifyUrl -- | External URLs for this track.
-    , href              :: Text -- | A link to the Web API endpoint providing
+    , external_urls     :: SpotifyUrl -- ^ External URLs for this track.
+    , href              :: Text -- ^ A link to the Web API endpoint providing
                                 --   full details of the track.
-    , id                :: Text -- | The Spotify ID for the track.
-    , is_playable       :: Bool -- | Part of the response when Track Relinking
+    , id                :: Text -- ^ The Spotify ID for the track.
+    , is_playable       :: Bool -- ^ Part of the response when Track Relinking
                                 --   is applied. If 'True', the track is
                                 --   playable in the given market. Otherwise
                                 --   'False'.
-    , linked_from       :: Maybe LinkedTrack -- | Part of the response when
+    , linked_from       :: Maybe LinkedTrack -- ^ Part of the response when
                                              --   Track Relinking is applied
                                              --   and is only part of the
                                              --   response if the track
@@ -54,13 +54,13 @@ data TrackSimplified = TrackSimplified
                                              --   linked_from object contains
                                              --   information about the
                                              --   originally requested track.
-    , name              :: Text -- | The name of the track.
-    , preview_url       :: Text -- | A link to a 30 second preview (MP3 format)
+    , name              :: Text -- ^ The name of the track.
+    , preview_url       :: Text -- ^ A link to a 30 second preview (MP3 format)
                                 --   of the track.
-    , track_number      :: Int -- | The number of the track. If an album has
+    , track_number      :: Int -- ^ The number of the track. If an album has
                                --   several discs, the track number is the
                                --   number on the specified disc.
-    , uri               :: SpotifyUri TrackSimplified -- | The 'SpotifyUri' for
+    , uri               :: SpotifyUri TrackSimplified -- ^ The 'SpotifyUri' for
                                                       --   the track.
     } deriving (Generic)
 

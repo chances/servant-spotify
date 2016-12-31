@@ -20,13 +20,13 @@ import           Network.Spotify.Api.Types.SpotifyUrl       (SpotifyUrl)
 
 -- | Information about an album.
 data AlbumSimplified = AlbumSimplified
-    { album_type        :: AlbumType -- | The type of the album.
-    , artists           :: [ArtistSimplified] -- | The artists of the album.
+    { album_type        :: AlbumType -- ^ The type of the album.
+    , artists           :: [ArtistSimplified] -- ^ The artists of the album.
                                               --   Each artist object includes
                                               --   a link in href to more
                                               --   detailed information about
                                               --   the artist.
-    , available_markets :: [CountryCode] -- | The markets in which the album is
+    , available_markets :: [CountryCode] -- ^ The markets in which the album is
                                          --   available: ISO 3166-1 alpha-2
                                          --   country codes.
                                          --   .
@@ -34,15 +34,15 @@ data AlbumSimplified = AlbumSimplified
                                          --   available in a market when at
                                          --   least 1 of its tracks is
                                          --   available in that market.
-    , external_urls     :: SpotifyUrl -- | Known external URLs for this album.
-    , href              :: Text -- | A link to the Web API endpoint providing
+    , external_urls     :: SpotifyUrl -- ^ Known external URLs for this album.
+    , href              :: Text -- ^ A link to the Web API endpoint providing
                                 --   full details of the album.
-    , id                :: Text -- | The Spotify ID for the album.
-    , images            :: [Image] -- | The cover art for the album in various
+    , id                :: Text -- ^ The Spotify ID for the album.
+    , images            :: [Image] -- ^ The cover art for the album in various
                                    --   sizes, widest first.
-    , name              :: Text -- | The name of the album. In case of an album
+    , name              :: Text -- ^ The name of the album. In case of an album
                                 --   takedown, the value may be an empty string.
-    , uri               :: SpotifyUri AlbumSimplified -- | The 'SpotifyUri' for
+    , uri               :: SpotifyUri AlbumSimplified -- ^ The 'SpotifyUri' for
                                                       --   the album.
     } deriving (Generic)
 

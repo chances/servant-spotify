@@ -13,10 +13,10 @@ import           Network.Spotify.Internal.Utils
 
 -- | Information about the followers of the user.
 data Image = Image
-    { url    :: Text -- | The source URL of the image.
-    , width  :: Maybe Int -- | The image width in pixels. If unknown: null or
+    { url    :: Text -- ^ The source URL of the image.
+    , width  :: Maybe Int -- ^ The image width in pixels. If unknown: null or
                           --   not returned.
-    , height :: Maybe Int -- | The image height in pixels. If unknown: null or
+    , height :: Maybe Int -- ^ The image height in pixels. If unknown: null or
                           --   not returned.
     } deriving (Generic)
 

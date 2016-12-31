@@ -15,12 +15,12 @@ import           Network.Spotify.Api.Types.SpotifyUrl (SpotifyUrl)
 
 -- | Information about an artist.
 data ArtistSimplified = ArtistSimplified
-    { external_urls :: SpotifyUrl -- | Known external URLs for this artist.
-    , href          :: Text -- | A link to the Web API endpoint providing full
+    { external_urls :: SpotifyUrl -- ^ Known external URLs for this artist.
+    , href          :: Text -- ^ A link to the Web API endpoint providing full
                             --   details of the artist.
-    , id            :: Text -- | The Spotify ID for the artist.
-    , name          :: Text -- | The name of the artist.
-    , uri           :: SpotifyUri ArtistSimplified -- | The SpotifyUri for the
+    , id            :: Text -- ^ The Spotify ID for the artist.
+    , name          :: Text -- ^ The name of the artist.
+    , uri           :: SpotifyUri ArtistSimplified -- ^ The SpotifyUri for the
                                                    --   artist.
     } deriving (Generic)
 
