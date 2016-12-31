@@ -45,7 +45,7 @@ data User = User
                                   --   .
                                   --   Only available when granted the
                                   --   'userReadPrivate' 'Scope'.
-    , external_urls :: [SpotifyUrl] -- | Known external URLs for this user.
+    , external_urls :: SpotifyUrl -- | Known external URLs for this user.
     , followers     :: Followers -- | Information about the followers of the
                                  --   user.
     -- IDEA: Generalize href for reuse across library to get other resources
