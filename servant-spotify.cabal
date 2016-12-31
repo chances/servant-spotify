@@ -47,9 +47,9 @@ library
                      , http-client >= 0.5 && < 0.6
                      , iso3166-country-codes
                      , random-strings
-                     , servant
-                     , servant-client
-                     , servant-server
+                     , servant >= 0.8.1 && < 0.9
+                     , servant-client >= 0.8.1 && < 0.9
+                     , servant-server >= 0.8.1 && < 0.9
                      , split
                      , text
                      , unordered-containers
