@@ -15,5 +15,5 @@ spotifyApiBaseUrl = BaseUrl
     { baseUrlScheme = Https
     , baseUrlHost = "api.spotify.com"
     , baseUrlPort = 443
-    , baseUrlPath = "v1"
+    , baseUrlPath = "/v1"
     }
