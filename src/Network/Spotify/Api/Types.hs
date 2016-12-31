@@ -151,8 +151,7 @@ makeRefreshTokenRequest token = TokenRequest
     }
 
 data Authorization = Authorization
-    { clientId        :: Text
-    , clientSecretKey :: Text
+    { accessToken :: Text
     } deriving (Generic, Eq)
 
 instance FromJSON Authorization
@@ -160,13 +159,28 @@ instance ToJSON Authorization
 
 instance Show Authorization where
     show authorization = value where
+        value = "Bearer " ++ unpack (accessToken authorization)
+
+instance ToHttpApiData Authorization where
+    toQueryParam = pack . show
+
+data TokenAuthorization = TokenAuthorization
+    { clientId        :: Text
+    , clientSecretKey :: Text
+    } deriving (Generic, Eq)
+
+instance FromJSON TokenAuthorization
+instance ToJSON TokenAuthorization
+
+instance Show TokenAuthorization where
+    show authorization = value where
         clientIdKey = unpack $ clientId authorization
         clientSecret = unpack $ clientSecretKey authorization
         keys = clientIdKey ++ ":" ++ clientSecret
         encodedKeys = encode $ C8.pack keys
         value = "Basic " ++ C8.unpack encodedKeys
 
-instance ToHttpApiData Authorization where
+instance ToHttpApiData TokenAuthorization where
     toQueryParam = pack . show
 
 data TokenResponse = TokenResponse

@@ -37,7 +37,7 @@ authorizeLink = safeLink authorizeApi authorizeApi
 
 type TokenApi = "token"
     :> ReqBody '[FormUrlEncoded] TokenRequest
-    :> Header "Authorization" Authorization
+    :> Header "Authorization" TokenAuthorization
     :> Post '[JSON] TokenResponse
 
 tokenApi :: Proxy TokenApi
@@ -52,7 +52,7 @@ spotifyAccountsBaseUrl = BaseUrl
     }
 
 tokenRequest ::
-    TokenRequest -> Authorization -> Manager -> ClientM TokenResponse
+    TokenRequest -> TokenAuthorization -> Manager -> ClientM TokenResponse
 tokenRequest token auth manager =
     let tokenApiClient = client tokenApi
     in tokenApiClient token (Just auth) manager spotifyAccountsBaseUrl
