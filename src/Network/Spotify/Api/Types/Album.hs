@@ -4,14 +4,7 @@
 module Network.Spotify.Api.Types.Album where
 
 import           Data.Aeson                                 (FromJSON (parseJSON),
-                                                             ToJSON,
-                                                             defaultOptions,
-                                                             genericParseJSON,
-                                                             genericToJSON,
-                                                             object, toJSON,
-                                                             withObject,
-                                                             withText, (.:),
-                                                             (.=))
+                                                             (.:), (.=))
 import           Data.Aeson                                 as A
 import           Data.ISO3166_CountryCodes                  (CountryCode)
 import           Data.Text                                  (Text, pack, unpack)
@@ -83,10 +76,10 @@ data Album = Album
                                                  --   album.
     } deriving (Generic)
 
-instance FromJSON Album where
-    parseJSON = genericParseJSON defaultOptions
-instance ToJSON Album where
-    toJSON = genericToJSON defaultOptions
+instance A.FromJSON Album where
+    parseJSON = A.genericParseJSON A.defaultOptions
+instance A.ToJSON Album where
+    toJSON = A.genericToJSON A.defaultOptions
 
 data AlbumType =
       FullAlbum
@@ -94,10 +87,10 @@ data AlbumType =
     | Compilation
     deriving Generic
 
-instance FromJSON AlbumType where
-    parseJSON = genericParseJSON defaultOptions
-instance ToJSON AlbumType where
-    toJSON = genericToJSON defaultOptions
+instance A.FromJSON AlbumType where
+    parseJSON = A.genericParseJSON A.defaultOptions
+instance A.ToJSON AlbumType where
+    toJSON = A.genericToJSON A.defaultOptions
 
 data Copyright = Copyright
     { text  :: Text -- | The copyright text for an album.
@@ -105,13 +98,13 @@ data Copyright = Copyright
                     --   sound recording (performance) copyright.
     }
 
-instance FromJSON Copyright where
-    parseJSON = withObject "Copyright" $ \o -> Copyright
+instance A.FromJSON Copyright where
+    parseJSON = A.withObject "Copyright" $ \o -> Copyright
         <$> o .: "text"
         <*> o .: "type"
 
-instance ToJSON Copyright where
-  toJSON o = object
+instance A.ToJSON Copyright where
+  toJSON o = A.object
     [ "text" .= text o
     , "type" .= type_ o
     ]
@@ -135,10 +128,10 @@ instance Read ReleaseDatePrecision where
             "day"   -> Day
             _       -> Year -- This should never happen...
 
-instance FromJSON ReleaseDatePrecision where
-    parseJSON = withText "Release Date Precision" $ \str ->
+instance A.FromJSON ReleaseDatePrecision where
+    parseJSON = A.withText "Release Date Precision" $ \str ->
         let precision = read $ unpack str :: ReleaseDatePrecision
             in return precision
 
-instance ToJSON ReleaseDatePrecision where
+instance A.ToJSON ReleaseDatePrecision where
     toJSON precision = A.String $ pack (show precision)
