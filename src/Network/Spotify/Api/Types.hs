@@ -60,9 +60,6 @@ instance FromHttpApiData State where
 instance ToHttpApiData State where
     toQueryParam = pack . show
 
-wrap :: String -> (String -> a) -> [(a, String)]
-wrap str convert = [(convert str, "")]
-
 -- readState :: String -> [(State, String)]
 -- readState str = [(State
 --     { getState = fst . head . lex $ str

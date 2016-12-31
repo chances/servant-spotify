@@ -1,6 +1,7 @@
 module Network.Spotify.Internal.Utils
     ( doOmitNothingFields
     , spotifyApiBaseUrl
+    , wrap
     ) where
 
 import           Data.Aeson       (defaultOptions)
@@ -17,3 +18,6 @@ spotifyApiBaseUrl = BaseUrl
     , baseUrlPort = 443
     , baseUrlPath = "/v1"
     }
+
+wrap :: String -> (String -> a) -> [(a, String)]
+wrap str convert = [(convert str, "")]

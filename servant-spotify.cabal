@@ -1,5 +1,5 @@
 name:                servant-spotify
-version:             0.1.1.2
+version:             0.1.2.0
 synopsis:            Bindings to the Spotify Web API via servant-client
 description:         Provides a servant-client based client library for the
                      <https://developer.spotify.com/web-api/ Spotify Web API (v1)>.
@@ -22,11 +22,21 @@ library
                      , Network.Spotify.Client
                      , Network.Spotify.Api.Auth
                      , Network.Spotify.Api.Types
+                     , Network.Spotify.Api.Types.Album
+                     , Network.Spotify.Api.Types.AlbumSimplified
+                     , Network.Spotify.Api.Types.Artist
+                     , Network.Spotify.Api.Types.ArtistSimplified
+                     , Network.Spotify.Api.Types.ExternalId
                      , Network.Spotify.Api.Types.Followers
                      , Network.Spotify.Api.Types.Image
+                     , Network.Spotify.Api.Types.Paging
+                     , Network.Spotify.Api.Types.Playlist
+                     , Network.Spotify.Api.Types.PlaylistSimplified
                      , Network.Spotify.Api.Types.Scope
                      , Network.Spotify.Api.Types.SpotifyUri
                      , Network.Spotify.Api.Types.SpotifyUrl
+                     , Network.Spotify.Api.Types.Track
+                     , Network.Spotify.Api.Types.TrackSimplified
                      , Network.Spotify.Api.Types.User
                      , Network.Spotify.Api.User
   other-modules:       Network.Spotify.Internal.Utils
