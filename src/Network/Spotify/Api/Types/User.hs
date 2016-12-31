@@ -4,8 +4,9 @@
 module Network.Spotify.Api.Types.User where
 
 import           Data.Aeson                           (FromJSON (parseJSON),
-                                                       ToJSON, genericParseJSON,
-                                                       genericToJSON, toJSON)
+                                                       ToJSON, genericToJSON,
+                                                       toJSON, withObject, (.:),
+                                                       (.:?))
 import           Data.ISO3166_CountryCodes            (CountryCode)
 import           Data.Text                            (Text)
 import           GHC.Generics                         (Generic)
@@ -21,10 +22,10 @@ import           Network.Spotify.Internal.Utils
 --   @note Certain values are Nothing depending on the scope granted to the
 --   request the retreives the 'User'.
 data User = User
-    { birthdate     :: Birthdate -- | The user's date-of-birth.
-                                 --   .
-                                 --   Only available when granted the
-                                 --   'userReadBirthdate' 'Scope'.
+    { birthdate     :: Maybe Text -- | The user's date-of-birth.
+                                  --   .
+                                  --   Only available when granted the
+                                  --   'userReadBirthdate' 'Scope'.
     , country       :: Maybe CountryCode -- | The country of the user, as set
                                          --   in the user's account profile.
                                          --   .
@@ -63,12 +64,20 @@ data User = User
                             --   request granted the 'userReadPrivate' 'Scope'.
     } deriving (Generic)
 
-newtype Birthdate = Birthdate (Maybe Text) deriving (Generic)
-instance FromJSON Birthdate
-instance ToJSON Birthdate
-
 instance FromJSON User where
-    parseJSON = genericParseJSON doOmitNothingFields
+    parseJSON = withObject "record" $ \o -> User
+        <$> o .:? "birthdate"
+        <*> o .:? "country"
+        <*> o .: "display_name"
+        <*> o .:? "email"
+        <*> o .: "external_urls"
+        <*> o .: "followers"
+        <*> o .: "href"
+        <*> o .: "id"
+        <*> o .: "images"
+        <*> o .:? "product"
+        <*> o .: "uri"
+        <*> o .: "isPrivate"
 instance ToJSON User where
     toJSON = genericToJSON doOmitNothingFields
 
