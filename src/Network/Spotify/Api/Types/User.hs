@@ -60,8 +60,6 @@ data User = User
                                   --   Only available when granted the
                                   --   'userReadPrivate' 'Scope'.
     , uri           :: SpotifyUri User -- | The 'SpotifyUri' for the user.
-    , isPrivate     :: Bool -- | Whether or not this 'User' was retreived in a
-                            --   request granted the 'userReadPrivate' 'Scope'.
     } deriving (Generic)
 
 instance FromJSON User where
@@ -77,7 +75,6 @@ instance FromJSON User where
         <*> o .: "images"
         <*> o .:? "product"
         <*> o .: "uri"
-        <*> o .: "isPrivate"
 instance ToJSON User where
     toJSON = genericToJSON doOmitNothingFields
 
