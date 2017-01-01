@@ -71,7 +71,7 @@ instance FromJSON User where
     parseJSON = withObject "User" $ \o -> User
         <$> o .:? "birthdate"
         <*> o .:? "country"
-        <*> o .: "display_name"
+        <*> o .:? "display_name"
         <*> o .:? "email"
         <*> o .: "external_urls"
         <*> o .: "followers"

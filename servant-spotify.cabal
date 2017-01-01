@@ -1,5 +1,5 @@
 name:                servant-spotify
-version:             0.2.0.0
+version:             0.2.1.0
 synopsis:            Bindings to the Spotify Web API via servant-client
 description:         Provides a servant-client based client library for the
                      <https://developer.spotify.com/web-api/ Spotify Web API (v1)>.
