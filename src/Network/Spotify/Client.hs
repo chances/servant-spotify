@@ -9,8 +9,9 @@ module Network.Spotify.Client
     , TokenApi
     , authorizeApi
     , authorizeLink
-    , meApi
-    , meRequest
+    , userApi
+    , getMe
+    , getMePlaylists
     , spotifyAccountsBaseUrl
     , spotifyApiBaseUrl
     , tokenApi
