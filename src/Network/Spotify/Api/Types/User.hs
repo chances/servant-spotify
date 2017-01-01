@@ -10,13 +10,13 @@ module Network.Spotify.Api.Types.User where
 
 import           Data.Aeson                           (FromJSON (parseJSON),
                                                        ToJSON, genericToJSON,
-                                                       toJSON, withObject, (.:),
-                                                       (.:?))
+                                                       toJSON, withObject,
+                                                       (.!=), (.:), (.:?))
 import           Data.ISO3166_CountryCodes            (CountryCode)
 import           Data.Text                            (Text)
 import           GHC.Generics                         (Generic)
 
-import           Network.Spotify.Api.Types.Followers  (Followers)
+import           Network.Spotify.Api.Types.Followers  (Followers (..))
 import           Network.Spotify.Api.Types.Image      (Image)
 import           Network.Spotify.Api.Types.SpotifyUri (SpotifyUri)
 import           Network.Spotify.Api.Types.SpotifyUrl (SpotifyUrl)
@@ -61,7 +61,7 @@ data User = User
                                   --   "premium", "free", etc. (The subscription
                                   --   level "open" can be considered the same
                                   --   as "free".)
-                                  --   
+                                  --
                                   --   Only available when granted the
                                   --   'userReadPrivate' 'Scope'.
     , uri           :: SpotifyUri User -- ^ The 'SpotifyUri' for the user.
@@ -74,10 +74,10 @@ instance FromJSON User where
         <*> o .:? "display_name"
         <*> o .:? "email"
         <*> o .: "external_urls"
-        <*> o .: "followers"
+        <*> o .:? "followers" .!= Followers Nothing 0
         <*> o .: "href"
         <*> o .: "id"
-        <*> o .: "images"
+        <*> o .:? "images" .!= []
         <*> o .:? "product"
         <*> o .: "uri"
 instance ToJSON User where
